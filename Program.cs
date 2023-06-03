@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 // Add EF Core DI
 builder.Services.AddDbContext<MovieContext>(options =>
-    options.UseSqlServer(
+    options.UseSqlite(
         builder.Configuration.GetConnectionString("MovieContext")));
 
 var app = builder.Build();

@@ -15,8 +15,15 @@ namespace MovieList.Models
         public int? Year { get; set; }
 
         [Required(ErrorMessage = "Please enter a rating.")]
-        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
         public int? Rating { get; set; }
- 
+
+        
+        public string GenreId {set;get;}
+
+        public Genre Genre { set => new Genre { Name = GenreId , GenreId = GenreId}; }
+        
+        [Required(ErrorMessage = "Please enter a Lanaguage.")]
+        public string Language {set;get;}
+        
     }
 }

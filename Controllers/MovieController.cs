@@ -27,6 +27,7 @@ namespace MovieList.Controllers
         [HttpPost]
         public IActionResult Edit(Movie movie)
         {
+            movie.Genre = new Genre{ GenreId = movie.GenreId, Name = movie.GenreId};
             if (ModelState.IsValid)
             {
                 if (movie.MovieId == 0)
